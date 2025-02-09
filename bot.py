@@ -1,10 +1,11 @@
 import openai
+import os
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-# Установим API ключи
-TELEGRAM_API_KEY = '7905118281:AAF9b025rc4g6lFy6BxJxYIXYDbE_OlQD3g'  # Замените на ваш Telegram API ключ
-DEEPSEEK_API_KEY = 'sk-6d2c5b8cc905419ea28cee171b7d18b1'  # Замените на ваш DeepSeek API ключ
+# Устанавливаем API ключи из переменных окружения
+TELEGRAM_API_KEY = os.getenv('BOT_TOKEN')  # Ключ для Telegram бота
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')  # Ключ для DeepSeek API
 
 # Устанавливаем OpenAI API
 openai.api_key = DEEPSEEK_API_KEY
